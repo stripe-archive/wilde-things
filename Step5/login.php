@@ -10,7 +10,7 @@
   		?>
 
   		<form action="charge.php" method="POST">
-        Would you like to pay $535.00 with your card ending in <?php echo $stripe_customer->active_card['last4'] ?>?
+        Would you like to pay $535 with your card ending in <?php echo $stripe_customer->active_card['last4'] ?>?
         <input type="hidden" name="customer_id" value="<?php echo $stripe_customer->id ?>" />
         <input type="submit" name="submit" value="Yes!" />
   		</form>
