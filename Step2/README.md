@@ -4,7 +4,7 @@ In this step, we add some simple error handling and show you how to debug the is
 
 To start, try running the demo from Step1 and making a payment with the card "4000000000000002" -- this is one of many cards that are available on [https://stripe.com/docs/testing](https://stripe.com/docs/testing) to reproduce specific errors.  You'll notice that your program will error.
 
-To investigate the error, you have a couple of tools at your disposable.
+To investigate the error, you have a couple of tools at your disposal.
 
 First, you can look at your own PHP logs.  If you are running PHP through the built-in Apache on OS X, you can find these at /private/var/log/apache2/error_log.
 

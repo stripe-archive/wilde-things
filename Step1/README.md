@@ -1,6 +1,6 @@
 ## Step 1: Get it running
 
-In Step 1, we create a very checkout to purchase a single Oscare Wilde quote for $535.00.  This demo uses the Stripe Button, which is a beta product but greatly simplifies creating your checkout.
+In Step 1, we create a very checkout to purchase a single Oscar Wilde quote for $535.00.  This demo uses the Stripe Button, which is a beta product but greatly simplifies creating your checkout.
 
 Before trying to run the code, sign up a Stripe account at [https://stripe.com/signup](https://stripe.com/signup).  Then, grab your API keys from [https://manage.stripe.com/#account/apikeys](https://manage.stripe.com/#account/apikeys) and replace the placeholders in the code with them.
 
