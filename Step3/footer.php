@@ -1,3 +1,2 @@
-  </div><!-- #container -->
   </body>
 </html>

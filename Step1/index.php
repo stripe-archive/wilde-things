@@ -2,17 +2,13 @@
 <html lang="en">
   <head>
     <title>Wilde Things</title>
-    <link rel="stylesheet" href="../public/css/normalize.css">
-    <link rel="stylesheet" href="../public/css/style.css">
   </head>
   <body>
-  <div id="container">
-
 <?php
   require_once('../stripe/lib/Stripe.php');
   $stripe = array(
-    'secret_key'      => 'sk_test_y0zP9lMorq7p8BLenOZVPNLV',
-    'publishable_key' => 'pk_test_4h8xP1UgGxwth1c2wVfOtRaq'
+    'secret_key'      => '<YOUR SECRET STRIPE API KEY>',
+    'publishable_key' => '<YOUR PUBLISHABLE STRIPE API KEY>'
     );
   Stripe::setApiKey($stripe['secret_key']);
 
@@ -52,7 +48,5 @@
   <?php
   }
 ?>
-
-  </div><!--#container --> 
   </body>
 </html>
