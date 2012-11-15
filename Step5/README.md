@@ -1,6 +1,6 @@
 ## Step 5: Subscriptions: billing more than once in a Wilde
 
-Some people may be happy getting their fix of Wilde quotes by purchasing one every time they get the itch.  Butt the true fans want their daily fix of Wilde.
+Some people may be happy getting their fix of Wilde quotes by purchasing one every time they get the itch.  But the true fans want their daily fix of Wilde.
 
 In this step, we add a way to sign up for a monthly plan that charges $400 a month for daily Oscar Wilde quotes.  We leave it as an exercise to the reader to implement the actual sending of Wilde quotes everyday.
 
