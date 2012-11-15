@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- CSS for styles --> 
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+
   	<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
     <!-- jQuery is used only for this example; it isn't required to use Stripe -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -46,4 +50,5 @@
 
   </head>
   <body>
+  <div id="container">
     <h2>Wilde Things</h2>

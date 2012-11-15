@@ -18,9 +18,9 @@ To test your webhook with real data, copy one of the requests from one of the we
 
 To put this into action for the purposes of Step 6, do the following:
 1. send a test webhook from your dashboard of type invoice.payment_succeeded.
-1. Copy and paste the request from that and paste it in under "set post body" in hurl.it.
-1. Set your URL correctly on hurl.it.
-1. Pick an invoice to test with -- any customer you subscribed to a monthly plan should have at least one invoice.
-1. Replace the invoice ID and customer IDs in your request body that you pasted onto hurl.it with a real customer ID and invoice ID, and try sending it!
+2. Copy and paste the request from that and paste it in under "set post body" in hurl.it.
+3. Set your URL correctly on hurl.it.
+4. Pick an invoice to test with -- any customer you subscribed to a monthly plan should have at least one invoice.
+5. Replace the invoice ID and customer IDs in your request body that you pasted onto hurl.it with a real customer ID and invoice ID, and try sending it!
 
 We don't send actual e-mails in this step, but you should see a file get generated with the e-mail that would have been sent under /public on your local machine.

@@ -2,8 +2,11 @@
 <html lang="en">
   <head>
     <title>Wilde Things</title>
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/style.css">
   </head>
   <body>
+  <div id="container">
 <?php
   require_once('../stripe/lib/Stripe.php');
   $stripe = array(
@@ -62,5 +65,6 @@
   <?php
   }
 ?>
+  </div><!-- #container -->
   </body>
 </html>
