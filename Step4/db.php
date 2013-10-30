@@ -14,15 +14,14 @@ function get_customer($email_address)
 function get_all_customers()
 {
 	$customers = array();
-	$db_contents = file_get_contents("../public/customers.txt");
-    $existing_customers = explode(';', $db_contents);
+    $existing_customers = file("../public/customers.txt");
     foreach($existing_customers as &$customer) {
-        $customer_info = explode(',', $customer);
+        list($email, $password, $stripe_id) = explode(',', $customer);
         array_push($customers, array(
-        	  'email' => $customer_info[0],
-        	  'password' => $customer_info[1],
-        	  'stripe_id' => $customer_info[2]
-        	));
+            'email' => $email,
+        	'password' => $password,
+        	'stripe_id' => trim($stripe_id)
+        ));
     }
     return $customers;
 }
@@ -30,7 +29,7 @@ function get_all_customers()
 function create_customer($email_address, $password, $stripe_id)
 {
     // Encode password with Blowfish algorithm
-    $db_entry = $email_address.','.crypt($password).','.$stripe_id.';';
+    $db_entry = $email_address.','.crypt($password).','.$stripe_id."\n";
 
     // Make sure /public is writeable by the Apache process and readable (If this is too hard, feel free to just make a /public directory temporarily and run "sudo chmod 777 /public" for the sake of this demo)
     $db = fopen('../public/customers.txt', 'a');
