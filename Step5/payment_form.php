@@ -14,7 +14,7 @@
 <hr />
 <form action="charge.php" method="post">
 	<h3>Sign up to get a new quote every day! Just $400 a month!</h3>
-	<input type="hidden" name="subscription_purchase" value="subscription_purchae" />
+	<input type="hidden" name="subscription_purchase" value="subscription_purchase" />
 	<input type="text" name="email" placeholder="E-mail address" />
 	<input type="password" name="password" placeholder="Password" />
 	<script src="https://button.stripe.com/v1/button.js" class="stripe-button"
