@@ -2,35 +2,37 @@
 <html lang="en">
   <head>
     <title>Wilde Things</title>
-    <link rel="stylesheet" href="../public/css/normalize.css">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
   <div id="container">
 <?php
-  require_once('../stripe/lib/Stripe.php');
+  require_once('vendor/autoload.php');
   $stripe = array(
     'secret_key'      => '<YOUR SECRET STRIPE API KEY>',
     'publishable_key' => '<YOUR PUBLISHABLE STRIPE API KEY>'
     );
-  Stripe::setApiKey($stripe['secret_key']);
+  \Stripe\Stripe::setApiKey($stripe['secret_key']);
 
-  if ($_POST) {
-    $error = NULL;
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $error = false;
+
     try {
-      if (!isset($_POST['stripeToken']))
-        throw new Exception("The Stripe Token was not generated correctly");
-      $charge = Stripe_Charge::create(array(
-        'card'     => $_POST['stripeToken'],
+
+      if (!isset($_POST['stripeToken'])) throw new Exception("The Stripe Token was not generated correctly");
+
+      $charge = \Stripe\Charge::create(array(
+        'source'     => $_POST['stripeToken'],
         'amount'   => 53500,
         'currency' => 'usd'
       ));
-    }
-    catch (Exception $e) {
+
+    } catch (Exception $e) {
       $error = $e->getMessage();
     }
 
-    if ($error == NULL) {
+    if (!$error) {
       $wildeQuotes = array(
         "A little sincerity is a dangerous thing, and a great deal of it is absolutely fatal.",
         "Always forgive your enemies; nothing annoys them so much.",
@@ -44,23 +46,23 @@
 
       echo "<h1>Here's your quote!</h1>";
       echo "<h2>".$wildeQuotes[array_rand($wildeQuotes)]."</h2>";
-    }
-    else {
+    } else {
       echo "<div class=\"error\">".$error."</div>";
     }
+
   }
 
-  if (!$_POST || $error)
+  if ( ($_SERVER['REQUEST_METHOD'] != 'POST') || $error)
   { ?>
     <h2>Wilde Things</h2>
     <h3>Purchase a quote by Oscar Wilde today! Only $535! Limited supply and going fast, buy now!!</h3>
-
-    <form action="index.php" method="post">
-      <script src="https://button.stripe.com/v1/button.js" class="stripe-button"
+    <form action="index.php" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<?php echo $stripe['publishable_key']; ?>"
-        data-amount=53500
         data-description="One Wilde quote"
-        data-label="Buy"></script>
+        data-amount="53500">
+      </script>
     </form>
   <?php
   }

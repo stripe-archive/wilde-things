@@ -38,7 +38,7 @@ Then run Composer's installation tool:
 
 ### Creating a Stripe account
 
-Next, sign up for a Stripe account at https://stripe.com and find your publishable and secret API keys in your [account settings](https://manage.stripe.com/#account/apikeys). As you go through the tutorial, you'll need to replace every instance of `<YOUR PUBLISHABLE STRIPE API KEY>` and `<YOUR SECRET STRIPE API KEY>` with your actual keys. 
+Next, sign up for a Stripe account at https://stripe.com and find your publishable and secret API keys in your [account settings](https://dashboard.stripe.com/account/apikeys). As you go through the tutorial, you'll need to replace every instance of `<YOUR PUBLISHABLE STRIPE API KEY>` and `<YOUR SECRET STRIPE API KEY>` with your actual keys. 
 
 ## Stripe PHP library versions and major changes
 

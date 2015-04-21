@@ -15,7 +15,7 @@
     );
   \Stripe\Stripe::setApiKey($stripe['secret_key']);
 
-  if ($_POST) {
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $charge = \Stripe\Charge::create(array(
       'source'     => $_POST['stripeToken'],
       'amount'   => 53500,
