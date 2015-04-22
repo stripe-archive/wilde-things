@@ -6,7 +6,7 @@ In this step, we add a way to sign up for a monthly plan that charges $400 a mon
 
 Before running this code, go to your [Stripe dashboard](https://manage.stripe.com/#test/plans) to create your monthly plan.  Create your plan with:
 
-* An ID of "monthly" (this is the only thing you must do to have the code in Step 5 work)
+* An ID of "monthly" (this is the only requirement for the code in Step 5 to work)
 * Any plan name you like
 * A price of $400
 * An appropriate currency
