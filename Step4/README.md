@@ -16,5 +16,5 @@ Note that, for security reasons, you do not want a publicly writable folder or t
 
 Once you get this code running, try purchasing a quote by signing up.  Then, purchase another quote after logging in.  You should see a customer in your Stripe dashboard with 2 payments.
 
-(Checkout accepts the user's email address, but not a password which complicates the creation of the account. For demonstration purposes, the password is requested outside of Checkout, which is a bit meh from a UX perspective. Alternatively, you could take the email address and password outside of Checkout, and then dynamically set a `data-email` value in the Checkout configuration via JavaScript.)
+(Checkout accepts the user's email address, but not a password which complicates the creation of the account. For demonstration purposes, the password is requested outside of Checkout, which is a bit "meh" from a UX perspective. Alternatively, you could take the email address and password outside of Checkout, and then dynamically set a `data-email` value in the Checkout configuration via JavaScript.)
 
