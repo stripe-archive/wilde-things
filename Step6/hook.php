@@ -1,13 +1,14 @@
 <?php
-require_once('./config.php');
+require_once('../config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$postdata = file_get_contents("php://input");
+
+	$postdata = @file_get_contents("php://input");
 	$event = json_decode($postdata);
 	if ($event->type == 'invoice.payment_succeeded') {
 		$customer_id = $event->data->object->customer;
-		$customer = Stripe_Customer::retrieve($customer_id);
-		$invoice = Stripe_Invoice::retrieve($event->data->object->id);
+		$customer = \Stripe\Customer::retrieve($customer_id);
+		$invoice = \Stripe\Invoice::retrieve($event->data->object->id);
 
 		// This is where we'd normally e-mail the invoice, but we'll just write out the invoice to a file instead.
 		$from = "From: Oscar Wilde";
@@ -24,9 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		    }
 		}
 
-		$email_file = fopen('/public/'.$customer->id."-".$invoice->date, 'a');
+		$email_file = fopen($customer->id."-".$invoice->date, 'a');
 		$email = $from."\n".$to."\n".$subject."\n".$body;
 		fwrite($email_file, $email);
 	}
 }
-?>

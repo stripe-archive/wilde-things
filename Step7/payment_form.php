@@ -1,8 +1,7 @@
-<form id="payment-form" action="charge.php" method="post">
-	<h3>Purchase a quote by Oscar Wilde today! Only $535! Limited supply and going fast, buy now!!</h3>
+<h3>Purchase a quote by Oscar Wilde today! Only $535! Limited supply and going fast, buy now!</h3>
     <!-- to display errors returned by createToken -->
     <span class="payment-errors"></span>
-    <form action="" method="POST" id="payment-form">
+    <form id="payment-form" action="charge.php" method="post">
         <div class="form-row">
             <label>Card Number</label>
                 <input type="text" size="20" autocomplete="off" class="card-number" />

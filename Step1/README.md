@@ -1,11 +1,9 @@
 ## Step 1: Get it running
 
-In Step 1, we create a checkout to purchase a single Oscar Wilde quote for $535.00.  This demo uses the Stripe Button, which is a beta product but greatly simplifies creating your checkout.
+In Step 1, we create a checkout page to purchase a single Oscar Wilde quote for $535.00.  This demo uses [Checkout](https://stripe.com/docs/tutorials/checkout), which will take care of building forms, validating input, and securing your customers' card data.
 
-Before trying to run the code, sign up for a Stripe account at [https://stripe.com/signup](https://stripe.com/signup).  Then, grab your API keys from [https://manage.stripe.com/#account/apikeys](https://manage.stripe.com/#account/apikeys) and replace the placeholders in the code with them.
+Make sure you've already setup your web server, installed the Stripe PHP library, and created your Stripe account (you'll need to add your actual keys to the code), as explained in the repo's primary README.
 
-Normally, you would then need to download the stripe-php client library from [https://stripe.com/docs/libraries](https://stripe.com/docs/libraries), but this source comes with the PHP library as a git submodule.
+This demo uses the instructions in [https://stripe.com/docs/guides/php](https://stripe.com/docs/guides/php) and [https://stripe.com/docs/tutorials/checkout](https://stripe.com/docs/tutorials/checkout) to create a simple checkout page.
 
-This demo then uses the instructions in [https://stripe.com/docs/guides/php](https://stripe.com/docs/guides/php) and [https://stripe.com/docs/button](https://stripe.com/docs/guides/php) to create a simple checkout page.
-
-Once you get this demo running, make a payment, and then see your charge on your [dashboard](https://manage.stripe.com) to verify that it worked.
+Once you get this demo running, make a payment (using [test credit card numbers](https://stripe.com/docs/testing#cards)), and then see your charge on your [dashboard](https://dashboard.stripe.com) to verify that it worked.

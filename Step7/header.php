@@ -1,14 +1,14 @@
-<?php require_once('./config.php'); ?>
+<?php require_once('../config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- CSS for styles --> 
-    <link rel="stylesheet" href="../public/css/normalize.css">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <!-- CSS for styles -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 
-  	<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- jQuery is used only for this example; it isn't required to use Stripe -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript">
     // this identifies your website in the createToken call below
     Stripe.setPublishableKey("<?php echo $stripe['publishable_key']; ?>");
