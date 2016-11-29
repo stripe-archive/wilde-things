@@ -26,7 +26,7 @@ Assuming you have installed Composer, add Stripe to your `composer.json` file (i
 
     {
       "require": {
-        "stripe/stripe-php": "2.*"
+        "stripe/stripe-php": "@stable"
       }
     }
 
