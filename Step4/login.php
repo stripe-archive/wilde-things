@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $existing_customer = get_customer($_POST['email']);
 
-    if ($existing_customer && crypt($_POST['password'], $existing_customer['password']) == $existing_customer['password']) {
+    if ($existing_customer && crypt($_POST['password'], $existing_customer['stripe_id']) == $existing_customer['password']) {
       $stripe_customer = \Stripe\Customer::retrieve($existing_customer['stripe_id']);
       $card = $stripe_customer->sources->retrieve($stripe_customer->default_source);
       ?>
